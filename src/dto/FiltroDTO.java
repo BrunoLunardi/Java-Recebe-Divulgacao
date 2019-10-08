@@ -5,6 +5,10 @@ public class FiltroDTO {
 	int id, id_topico, id_user, id_acao;
 	Double valor_min, valor_max;
 	
+	public FiltroDTO() {
+		
+	}
+	
 	public FiltroDTO(int id_topico, int id_user, int id_acao,
 			Double valor_min, Double valor_max) {
 		this.id_topico = id_topico;

@@ -9,6 +9,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import pub_sub.Subscriber;
+
 public class Main extends JFrame {
 
 	private JPanel contentPane;
@@ -20,9 +22,12 @@ public class Main extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					
+					//Executa tela principal da aplicação
 					Main frame = new Main();
 					frame.setVisible(true);
+					//inicializa listener para receber mensagens do broker
+					final Subscriber receiver = new Subscriber();
+			        receiver.startListener();
 					
 				} catch (Exception e) {
 					e.printStackTrace();
